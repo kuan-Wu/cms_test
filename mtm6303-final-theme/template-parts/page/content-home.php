@@ -19,7 +19,7 @@
 // The user should be allowed to upload the Header image via WordPress Admin through Featured Image
 $featured_img_url = get_the_post_thumbnail_url();
 if(empty($featured_img_url)){
-    $featured_img_url = get_stylesheet_directory_uri()."/assets/images/fallback-bg.jpg";
+    $featured_img_url = get_stylesheet_directory_uri()."/assets/images/img-home.jpg";
 }
 
 ?>

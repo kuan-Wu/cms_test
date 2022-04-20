@@ -36,7 +36,6 @@ function mtm6303final_setup() {
 		'social' => __( 'Social Links Menu', 'mtm6303final' ),
 	) );
 
-}
 
 function mtm6303final_getnav($theme_location = "top"){
 	$nav_items_return = [];
@@ -62,6 +61,25 @@ function mtm6303final_getnav($theme_location = "top"){
 		}
 	}
 	return $nav_items_return;
+}
+
+	
+	if(!is_admin()) {
+		// Enqueue Styles
+		//Fonts
+		//wp_enqueue_style('mtm6303final-font-styles',"http://fonts.googleapis.com/css?family=Open+Sans:400,600",'','1.0');
+
+		// All styles
+		wp_enqueue_style('mtm6303final-main-styles', get_theme_file_uri('/assets/css/main.a3f694c0.css'), '', '1.0');
+		//Boostrap
+		//wp_enqueue_style('mtm6303final-bootstrap-styles', get_theme_file_uri('/assets/css/bootstrap.min.css'), '', '1.0');
+
+		// Use wp_enqueue_script() function to load the scripts
+		//wp_enqueue_script( 'jquery', get_theme_file_uri( '/js/jquery.js' ), '', '1.0.0', true );
+		//wp_enqueue_script('parallax', get_theme_file_uri('/js/parallax.min.js'), array('jquery'), '1.0.0', true);
+		//wp_enqueue_script('bootstrap', get_theme_file_uri('/js/bootstrap.min.js'), array('jquery'), '1.0.0', true);
+	}
+
 }
 
 add_action( 'after_setup_theme', 'mtm6303final_setup' );

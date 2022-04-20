@@ -12,48 +12,43 @@
  * @subpackage MTM6303_Final
  * @since MTM6303 Final 1.0
  */
+
+
  get_header();?>
 
-<div class="white-text-container background-image-container" style="background-image: url('./assets/images/img-home.jpg')">
-    <div class="opacity"></div>
-    <div class="container">
-        <div class="row">
-           
-            <div class="col-md-6">
-                <h1><?php echo get_the_title();?></h1>
-                <?php
-                while(have_posts()):the_post();?>
-                <div class="entry-content-page tm-mb-6">
-                    <?php the_content();?>
-                </div>
-
-                <?php 
-                endwhile; 
-                
-                ?>
-                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Adipiscing commodo elit at imperdiet dui accumsan sit. Ipsum dolor sit
-                    amet consectetur adipiscing elit. </p> -->
-                 <a href="./about.html" title="" class="btn btn-lg btn-primary">About Us</a>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 <div class="section-container background-color-container white-text-container">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <div class="text-center">
-                    <h2>Vivamus laoreet</h2>
-                    <p> Auctor augue mauris augue neque. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Porta non
-                        pulvinar neque laoreet. Viverra ipsum nunc aliquet bibendum. Iaculis urna id volutpat lacus. Turpis
-                        egestas pretium aenean pharetra magna ac. Id cursus metus aliquam eleifend mi. </p>
-                </div>
+              <div class="text-center">
+                <h1><?php echo get_the_title();?></h1>
+              </div>
             </div>
         </div>
-     </div>
- </div>
+    </div>
+</div>
 
-<?php get_footer(); ?>
+<div class="container">
+<div class="row">
+  <?php
+    if (have_posts()) :
+    /* Start the Loop */
+      while (have_posts()) : the_post();
+                
+      /*
+      * Include the Post-Format-specific template for the content.
+      * If you want to override this in a child theme, then include a file
+      * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+      */
+      get_template_part('template-parts/post/content');
+                
+      endwhile;
+    endif;
+  ?>
+  <!-- Page Content -->
+</div>
+</div><!-- entry-content-page -->
+
+<!-- Get footer -->
+<?php get_footer() ; ?>

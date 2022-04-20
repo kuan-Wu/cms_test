@@ -12,6 +12,7 @@
  * @subpackage MTM6303_Final
  */
 ?>
+
 <?php
 // The user should be allowed to upload the Header image via WordPress Admin through Featured Image
 $featured_img_url = get_the_post_thumbnail_url();

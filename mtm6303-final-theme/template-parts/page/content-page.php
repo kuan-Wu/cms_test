@@ -12,6 +12,7 @@
  * @subpackage MTM6303_Final
  */
 ?>
+
 <?php get_template_part( 'template-parts/page/content', 'page-header' );
 ?>
 <div class="section-container">
